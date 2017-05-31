@@ -1,0 +1,26 @@
+<div class="login-page-box">
+    <div class="login-content">
+        <div class="login-title">
+            <p>请登录</p>
+        </div>
+        <div class="login-from-group">
+            <p class="title">Account Number</p>
+            <input type="text" v-model:value="username" placeholder="账号">
+
+            <p class="title">Password</p>
+            <input type="password" v-model:value="password" placeholder="密码">
+
+            <p class="title">Verification code</p>
+            <input type="text" placeholder="验证码" v-model:value="code" v-on:change="leaveCodeBox()">
+
+            <img src="/user/getCaptcha" alt="验证码">
+            <p class="prompt">{{warning_data}}</p>
+        </div>
+        <div class="login-other-box">
+            <span v-on:click="linkToForgot()">忘记密码</span>or<span v-on:click="linkToRegist()">注册新用户</span>
+        </div>
+        <div class="login-button-group">
+            <a v-on:click="loginFunc()">登录</a>
+        </div>
+    </div>
+</div>

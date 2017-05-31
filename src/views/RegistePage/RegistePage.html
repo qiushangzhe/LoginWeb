@@ -1,0 +1,32 @@
+<div class="login-page-box">
+    <div class="login-content">
+        <div class="login-title">
+            <p>请注册</p>
+        </div>
+        <div class="login-from-group">
+            <p class="title">Account Number <span class="user-tips" v-bind:class="{ red: !user_canuse,green:user_canuse }">{{user_tips}}</span> </p>
+            <input type="text" v-model:value="username" placeholder="账号" v-on:change="nameInputOver()">
+
+            <p class="title">Password <span class="psd_tips" v-bind:class="{red:psd_tips}">{{psd_tips}}</span></p>
+            <input type="password" v-model:value="password" placeholder="密码" v-on:change="pwdInputOver()">
+
+            <p class="title">Check Password</p>
+            <input type="password" v-model:value="repassword" placeholder="再次输入密码" v-on:change="repwdInputOver()">
+
+            <p class="title">Verification code</p>
+            <input type="text" placeholder="验证码" v-model:value="code">
+
+            <div class="login-other-box" v-on:click="backToLogin()">
+                <span>返回登录界面</span>
+            </div>
+
+            <img src="/user/getCaptcha" alt="验证码">
+            <p class="prompt">{{warning_data}}</p>
+
+        </div>
+
+        <div class="login-button-group">
+            <a v-on:click="registeFunc()">注册</a>
+        </div>
+    </div>
+</div>
