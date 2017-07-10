@@ -42,5 +42,13 @@ module.exports = {
         pathRewrite: {
             '^/user/checkUserName': '/user/checkUserName' + json
         }
+    },
+    //是否已经登陆
+    '/user/islogin':{
+        target: url,
+        changeOrigin: true,
+        pathRewrite: {
+            '^/user/islogin': '/user/islogin' + json
+        }
     }
 }

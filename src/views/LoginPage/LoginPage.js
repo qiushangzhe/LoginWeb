@@ -2,6 +2,15 @@ import userService from '@/service/user.service.js'
 export default {
     created: function() {
         this.$http.$options = { withCredentials: true };
+        this.$http.post('/user/islogin').then(function(data){
+            var data = data.data;
+            if(data.error.code == 0){
+                userService.isLogin = true;
+                this.$router.push('userpage');
+            }else{
+                userService.isLogin = false;
+            }
+        });
     },
     //数据
     data: function() {
