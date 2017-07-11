@@ -18,6 +18,8 @@ export default {
             psd_canuse: false,
             //第二次输入的密码
             repassword: '',
+            //邮箱
+            email:'',
             //验证码
             code: ''
         }
@@ -41,7 +43,8 @@ export default {
             if (this.user_canuse && this.psd_canuse) {
                 this.$http.post('/user/register', {
                     username: this.username,
-                    password: this.repassword
+                    password: this.repassword,
+                    email : this.email
                 }).then(function(data) {
                     data = data.data;
                     if (data.error.code != 0) {

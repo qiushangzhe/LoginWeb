@@ -1,4 +1,24 @@
 <div class="user-page-box">
   <h1>个人中心</h1>
   <button type="button" name="button" v-on:click="clickButton()">点我</button>
+  <table class="am-table">
+      <thead>
+        <tr>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>邮箱</th>
+            <th>创建时间</th>
+            <th>权限</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="item of userlist">
+            <td>{{item.username}}</td>
+            <td>{{item.password}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.createTime}}</td>
+            <td>{{item.permission}}</td>
+        </tr>
+    </tbody>
+  </table>
 </div>

@@ -3,7 +3,8 @@
 import Vue from 'vue'
 import Validator from 'vue-validator'
 import VueResource from 'vue-resource'
-import '@/assets/reset.css'
+// import '@/assets/reset.css'
+import '@/assets/css/amazeui.min.css'
 import App from './App'
 import router from './router'
 
